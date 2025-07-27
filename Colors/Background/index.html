@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Background Color Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="p-5">
+      <h2 class="text-xl">Tailwind CSS Background Color Generator</h2>
+      <div class="flex gap-4">
+      <select class="appearance-none w-full" id="backgroundValue">
+        <option>50</option>
+        <option>100</option>
+        <option>200</option>
+        <option>300</option>
+        <option>400</option>
+        <option>500</option>
+        <option>600</option>
+        <option>700</option>
+        <option>800</option>
+        <option>900</option>
+        <option>950</option>
+      </select>
+      <select class="appearance-none w-full" id="backgroundColorName">
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="amber">Amber</option>
+        <option value="yellow">Yellow</option>
+        <option value="lime">Lime</option>
+        <option value="green">Green</option>
+        <option value="emerald">Emerald</option>
+        <option value="teal">Teal</option>
+        <option value="cyan">Cyan</option>
+        <option value="sky">Sky</option>
+        <option value="blue">Blue</option>
+        <option value="indigo">Indigo</option>
+        <option value="violet">Violet</option>
+        <option value="purple">Purple</option>
+        <option value="fuchsia">Fuchsia</option>
+        <option value="pink">Pink</option>
+        <option value="rose">Rose</option>
+        <option value="slate">Slate</option>
+        <option value="gray">Gray</option>
+        <option value="zinc">Zinc</option>
+        <option value="neutral">Neutral</option>
+        <option value="stone">Stone</option>
+      </select>
+      </div>
+      <button class="py-2 px-4 text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700 duration-150" onclick="generateBgColor()">Generate</button>
+      <div id="myElement"></div>
+      <pre class="p-3 bg-gray-100 overflow-x-auto font-mono shadow-sm" id="codeBox"></pre>
+    </div>
+  </body>
+  <script>
+    const bgColorName = document.getElementById("backgroundColorName");
+    const bgColorValue = document.getElementById("backgroundColorValue");
+
+    function generateBgColor() {
+      const content = `<div class="bg-${bgColorName}-${bgColorValue} p-5">Text in a background color</div>`;
+      document.getElementById("myElement").innerHTML = content;
+      document.getElementById("codeBox").textContent = content;
+    }
+  </script>
+</html>
