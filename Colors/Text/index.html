@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Background Color Generator</title>
+    <title>Text Color Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
     <div class="p-5">
-      <h2 class="text-xl">Tailwind CSS Background Color Generator</h2>
+      <h2 class="text-xl">Tailwind CSS Text Color Generator</h2>
       <div class="flex gap-4">
       <select class="appearance-none p-2 w-full" id="textColorValue">
         <option value="50">50</option>
@@ -48,7 +48,7 @@
         <option value="stone">Stone</option>
       </select>
       </div>
-      <button class="my-4 rounded-sm py-2 px-4 text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700 duration-150" onclick="generateBgColor()">Generate</button>
+      <button class="my-4 rounded-sm py-2 px-4 text-white bg-sky-500 hover:bg-sky-600 active:bg-sky-700 duration-150" onclick="generateTextColor()">Generate</button>
       <div id="myElement"></div>
       <pre class="mt-2 p-3 bg-gray-100 overflow-x-auto font-mono shadow-sm rounded-sm" id="codeBox"></pre>
     </div>
@@ -57,8 +57,8 @@
     const txtColorName = document.getElementById("textColorName").value;
     const txtColorValue = document.getElementById("textColorValue").value;
 
-    function generateBgColor() {
-      const content = `<div class="bg-${txtColorName}-${txtColorValue} p-5">Text in a background color</div>`;
+    function generateTextColor() {
+      const content = `<div class="text-${txtColorName}-${txtColorValue} p-5">Text in a background color</div>`;
       document.getElementById("myElement").innerHTML = content;
       document.getElementById("codeBox").textContent = content;
     }
