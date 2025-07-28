@@ -10,7 +10,7 @@
     <div class="p-5">
       <h2 class="text-xl">Tailwind CSS Background Color Generator</h2>
       <div class="flex gap-4">
-      <select class="appearance-none p-2 w-full" id="backgroundValue">
+      <select class="appearance-none p-2 w-full" id="backgroundColorValue">
         <option>50</option>
         <option>100</option>
         <option>200</option>
@@ -54,8 +54,8 @@
     </div>
   </body>
   <script>
-    const bgColorName = document.getElementById("backgroundColorName");
-    const bgColorValue = document.getElementById("backgroundColorValue");
+    const bgColorName = document.getElementById("backgroundColorName").value;
+    const bgColorValue = document.getElementById("backgroundColorValue").value;
 
     function generateBgColor() {
       const content = `<div class="bg-${bgColorName}-${bgColorValue} p-5">Text in a background color</div>`;
