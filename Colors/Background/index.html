@@ -9,7 +9,8 @@
   <body>
     <div class="p-5">
       <h2 class="text-xl">Tailwind CSS Background Color Generator</h2>
-      <div class="flex gap-4">
+      <div class="mb-3">
+      <label class="mb-1">Color Value:</label>
       <select class="appearance-none p-2 w-full" id="backgroundColorValue">
         <option value="50">50</option>
         <option value="100">100</option>
@@ -23,6 +24,9 @@
         <option value="900">900</option>
         <option value="950">950</option>
       </select>
+      </div>
+      <div class="mb-3">
+      <label class="mb-1">Color Name:</label>
       <select class="appearance-none p-2 w-full" id="backgroundColorName">
         <option value="red">Red</option>
         <option value="orange">Orange</option>
@@ -54,10 +58,9 @@
     </div>
   </body>
   <script>
-    const bgColorName = document.getElementById("backgroundColorName").value;
-    const bgColorValue = document.getElementById("backgroundColorValue").value;
-
     function generateBgColor() {
+      const bgColorName = document.getElementById("backgroundColorName").value;
+      const bgColorValue = document.getElementById("backgroundColorValue").value;
       const content = `<div class="bg-${bgColorName}-${bgColorValue} p-5">Text in a background color</div>`;
       document.getElementById("myElement").innerHTML = content;
       document.getElementById("codeBox").textContent = content;
